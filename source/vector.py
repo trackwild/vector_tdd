@@ -8,3 +8,11 @@ class Vector:
     def length(self):
         return sum([c**2 for c in self.nums])**0.5
 
+    def unit_vector(self):
+        return Vector([c/self.length() for c in self.nums])
+
+    def scale_vector(self, size):
+        return Vector([c * size for c in self.nums])
+
+    def __eq__(self, other):
+        return self.nums == other.nums
